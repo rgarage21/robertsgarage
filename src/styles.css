@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -59,6 +60,21 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-stencil: "Bebas Neue", "Impact", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Custom (cutting-edge) tokens */
+  --color-neon: var(--neon);
+  --color-neon-glow: var(--neon-glow);
+  --color-ink: var(--ink);
+
+  /* Trust (neighborhood) tokens */
+  --color-trust-navy: var(--trust-navy);
+  --color-trust-red: var(--trust-red);
+  --color-trust-cream: var(--trust-cream);
+  --color-trust-steel: var(--trust-steel);
 }
 
 :root {
@@ -95,6 +111,16 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* Concept-specific tokens */
+  --neon: oklch(0.68 0.27 18);
+  --neon-glow: oklch(0.78 0.22 240);
+  --ink: oklch(0.12 0.02 260);
+
+  --trust-navy: oklch(0.28 0.06 250);
+  --trust-red: oklch(0.52 0.21 27);
+  --trust-cream: oklch(0.97 0.02 85);
+  --trust-steel: oklch(0.45 0.02 250);
 }
 
 .dark {
@@ -140,5 +166,42 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-stencil { font-family: var(--font-stencil); letter-spacing: 0.04em; }
+  .font-mono-2 { font-family: var(--font-mono); }
+
+  .bg-grid-neon {
+    background-image:
+      linear-gradient(to right, oklch(1 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .text-glow-neon {
+    text-shadow: 0 0 24px color-mix(in oklab, var(--neon) 60%, transparent);
+  }
+
+  .ring-neon {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--neon) 50%, transparent),
+      0 0 40px -8px color-mix(in oklab, var(--neon) 60%, transparent);
+  }
+
+  .bg-noise {
+    background-image:
+      radial-gradient(circle at 25% 10%, oklch(1 0 0 / 0.04), transparent 40%),
+      radial-gradient(circle at 80% 90%, oklch(1 0 0 / 0.03), transparent 40%);
+  }
+
+  .stripe-warning {
+    background-image: repeating-linear-gradient(
+      45deg,
+      var(--neon) 0 12px,
+      transparent 12px 24px
+    );
   }
 }
