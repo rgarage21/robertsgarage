@@ -36,7 +36,7 @@ function CustomConcept() {
       <nav className="relative z-30 mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <div className="flex items-center gap-2">
           <span className="inline-block h-2 w-2 rounded-full bg-[var(--neon)] shadow-[0_0_12px_var(--neon)]" />
-          <span className="font-stencil text-xl">ROSHARON / AUTO·CUSTOM</span>
+          <span className="font-stencil text-xl">ROBERTS / GARAGE</span>
         </div>
         <div className="hidden items-center gap-8 font-mono-2 text-xs uppercase tracking-[0.2em] text-white/70 md:flex">
           <a href="#work">Work</a>
