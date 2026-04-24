@@ -1,5 +1,5 @@
 export const SHOP = {
-  name: "Rosharon Auto & Custom",
+  name: "Roberts Garage",
   phone: "(832) 800-1351",
   phoneHref: "tel:+18328001351",
   smsHref: "sms:+18328001351",
