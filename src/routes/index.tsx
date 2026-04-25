@@ -65,6 +65,22 @@ function Index() {
           image={heroTrust}
           accent="trust"
         />
+        <ConceptCard
+          to="/editorial"
+          tag="Concept 03"
+          title="Editorial / Minimalist Luxury"
+          desc="Magazine-style, serif headlines, lots of whitespace. A premium, careful detail-shop voice."
+          image={heroEditorial}
+          accent="trust"
+        />
+        <ConceptCard
+          to="/race"
+          tag="Concept 04"
+          title="Race Shop / Motorsport"
+          desc="Checkered flag, stencil type, red and yellow. High-octane, performance-first attitude."
+          image={heroRace}
+          accent="neon"
+        />
       </section>
 
       <footer className="border-t border-border">
