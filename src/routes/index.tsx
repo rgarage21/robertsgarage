@@ -3,6 +3,7 @@ import heroCustom from "@/assets/hero-custom.jpg";
 import heroTrust from "@/assets/hero-trust.jpg";
 import heroEditorial from "@/assets/hero-editorial.jpg";
 import heroRace from "@/assets/hero-race.jpg";
+import heroShop from "@/assets/hero-shop.jpg";
 import { SHOP } from "@/lib/shop";
 
 export const Route = createFileRoute("/")({
