@@ -82,6 +82,14 @@ function Index() {
           image={heroRace}
           accent="neon"
         />
+        <ConceptCard
+          to="/shop"
+          tag="Concept 05"
+          title="Bold Shop Site (Yellow & Black)"
+          desc="Hazard stripes, big block headlines, real top nav. Confident, modern small-business website."
+          image={heroShop}
+          accent="neon"
+        />
       </section>
 
       <footer className="border-t border-border">
