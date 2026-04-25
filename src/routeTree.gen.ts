@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrustRouteImport } from './routes/trust'
+import { Route as RaceRouteImport } from './routes/race'
+import { Route as EditorialRouteImport } from './routes/editorial'
 import { Route as CustomRouteImport } from './routes/custom'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +19,16 @@ import { Route as IndexRouteImport } from './routes/index'
 const TrustRoute = TrustRouteImport.update({
   id: '/trust',
   path: '/trust',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RaceRoute = RaceRouteImport.update({
+  id: '/race',
+  path: '/race',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EditorialRoute = EditorialRouteImport.update({
+  id: '/editorial',
+  path: '/editorial',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CustomRoute = CustomRouteImport.update({
@@ -39,12 +51,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/editorial': typeof EditorialRoute
+  '/race': typeof RaceRoute
   '/trust': typeof TrustRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/editorial': typeof EditorialRoute
+  '/race': typeof RaceRoute
   '/trust': typeof TrustRoute
 }
 export interface FileRoutesById {
@@ -52,20 +68,31 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/editorial': typeof EditorialRoute
+  '/race': typeof RaceRoute
   '/trust': typeof TrustRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/custom' | '/trust'
+  fullPaths: '/' | '/contact' | '/custom' | '/editorial' | '/race' | '/trust'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/custom' | '/trust'
-  id: '__root__' | '/' | '/contact' | '/custom' | '/trust'
+  to: '/' | '/contact' | '/custom' | '/editorial' | '/race' | '/trust'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/custom'
+    | '/editorial'
+    | '/race'
+    | '/trust'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   CustomRoute: typeof CustomRoute
+  EditorialRoute: typeof EditorialRoute
+  RaceRoute: typeof RaceRoute
   TrustRoute: typeof TrustRoute
 }
 
@@ -76,6 +103,20 @@ declare module '@tanstack/react-router' {
       path: '/trust'
       fullPath: '/trust'
       preLoaderRoute: typeof TrustRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/race': {
+      id: '/race'
+      path: '/race'
+      fullPath: '/race'
+      preLoaderRoute: typeof RaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/editorial': {
+      id: '/editorial'
+      path: '/editorial'
+      fullPath: '/editorial'
+      preLoaderRoute: typeof EditorialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/custom': {
@@ -106,6 +147,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   CustomRoute: CustomRoute,
+  EditorialRoute: EditorialRoute,
+  RaceRoute: RaceRoute,
   TrustRoute: TrustRoute,
 }
 export const routeTree = rootRouteImport

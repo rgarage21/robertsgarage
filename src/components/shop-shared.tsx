@@ -1,7 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { SHOP } from "@/lib/shop";
 
-export function ConceptSwitcher({ current }: { current: "custom" | "trust" }) {
+type ConceptKey = "custom" | "trust" | "editorial" | "race";
+
+const CONCEPTS: { key: ConceptKey; to: string; label: string }[] = [
+  { key: "custom", to: "/custom", label: "01 Custom" },
+  { key: "trust", to: "/trust", label: "02 Trust" },
+  { key: "editorial", to: "/editorial", label: "03 Editorial" },
+  { key: "race", to: "/race", label: "04 Race" },
+];
+
+export function ConceptSwitcher({ current }: { current: ConceptKey }) {
   return (
     <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/20 bg-black/70 px-2 py-1.5 text-xs backdrop-blur-md">
       <div className="flex items-center gap-1 text-white">
@@ -9,30 +18,22 @@ export function ConceptSwitcher({ current }: { current: "custom" | "trust" }) {
           to="/"
           className="rounded-full px-3 py-1 text-white/70 hover:text-white"
         >
-          ← All concepts
+          ← All
         </Link>
-        <Link
-          to="/custom"
-          className={
-            "rounded-full px-3 py-1 transition " +
-            (current === "custom"
-              ? "bg-white text-black"
-              : "text-white/70 hover:text-white")
-          }
-        >
-          01 Custom
-        </Link>
-        <Link
-          to="/trust"
-          className={
-            "rounded-full px-3 py-1 transition " +
-            (current === "trust"
-              ? "bg-white text-black"
-              : "text-white/70 hover:text-white")
-          }
-        >
-          02 Trust
-        </Link>
+        {CONCEPTS.map((c) => (
+          <Link
+            key={c.key}
+            to={c.to}
+            className={
+              "rounded-full px-3 py-1 transition " +
+              (current === c.key
+                ? "bg-white text-black"
+                : "text-white/70 hover:text-white")
+            }
+          >
+            {c.label}
+          </Link>
+        ))}
       </div>
     </div>
   );

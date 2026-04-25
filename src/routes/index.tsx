@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroCustom from "@/assets/hero-custom.jpg";
 import heroTrust from "@/assets/hero-trust.jpg";
+import heroEditorial from "@/assets/hero-editorial.jpg";
+import heroRace from "@/assets/hero-race.jpg";
 import { SHOP } from "@/lib/shop";
 
 export const Route = createFileRoute("/")({
@@ -62,6 +64,22 @@ function Index() {
           desc="Warm, honest, Texas-friendly. Built on trust, fair pricing, and long-time customers."
           image={heroTrust}
           accent="trust"
+        />
+        <ConceptCard
+          to="/editorial"
+          tag="Concept 03"
+          title="Editorial / Minimalist Luxury"
+          desc="Magazine-style, serif headlines, lots of whitespace. A premium, careful detail-shop voice."
+          image={heroEditorial}
+          accent="trust"
+        />
+        <ConceptCard
+          to="/race"
+          tag="Concept 04"
+          title="Race Shop / Motorsport"
+          desc="Checkered flag, stencil type, red and yellow. High-octane, performance-first attitude."
+          image={heroRace}
+          accent="neon"
         />
       </section>
 
