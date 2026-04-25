@@ -3,6 +3,7 @@ import heroCustom from "@/assets/hero-custom.jpg";
 import heroTrust from "@/assets/hero-trust.jpg";
 import heroEditorial from "@/assets/hero-editorial.jpg";
 import heroRace from "@/assets/hero-race.jpg";
+import heroShop from "@/assets/hero-shop.jpg";
 import { SHOP } from "@/lib/shop";
 
 export const Route = createFileRoute("/")({
@@ -79,6 +80,14 @@ function Index() {
           title="Race Shop / Motorsport"
           desc="Checkered flag, stencil type, red and yellow. High-octane, performance-first attitude."
           image={heroRace}
+          accent="neon"
+        />
+        <ConceptCard
+          to="/shop"
+          tag="Concept 05"
+          title="Bold Shop Site (Yellow & Black)"
+          desc="Hazard stripes, big block headlines, real top nav. Confident, modern small-business website."
+          image={heroShop}
           accent="neon"
         />
       </section>

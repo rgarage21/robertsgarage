@@ -249,4 +249,12 @@
       transparent 168px 176px
     );
   }
+
+  .hazard-stripe {
+    background-image: repeating-linear-gradient(
+      135deg,
+      #f5c518 0 18px,
+      #111 18px 36px
+    );
+  }
 }

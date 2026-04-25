@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { SHOP } from "@/lib/shop";
 
-type ConceptKey = "custom" | "trust" | "editorial" | "race";
+type ConceptKey = "custom" | "trust" | "editorial" | "race" | "shop";
 
 const CONCEPTS: { key: ConceptKey; to: string; label: string }[] = [
-  { key: "custom", to: "/custom", label: "01 Custom" },
-  { key: "trust", to: "/trust", label: "02 Trust" },
-  { key: "editorial", to: "/editorial", label: "03 Editorial" },
-  { key: "race", to: "/race", label: "04 Race" },
+  { key: "custom", to: "/custom", label: "01" },
+  { key: "trust", to: "/trust", label: "02" },
+  { key: "editorial", to: "/editorial", label: "03" },
+  { key: "race", to: "/race", label: "04" },
+  { key: "shop", to: "/shop", label: "05" },
 ];
 
 export function ConceptSwitcher({ current }: { current: ConceptKey }) {
