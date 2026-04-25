@@ -134,6 +134,15 @@
   --trust-red: oklch(0.52 0.21 27);
   --trust-cream: oklch(0.97 0.02 85);
   --trust-steel: oklch(0.45 0.02 250);
+
+  --edit-bone: oklch(0.96 0.005 80);
+  --edit-ink: oklch(0.18 0.01 60);
+  --edit-rule: oklch(0.82 0.01 60);
+  --edit-accent: oklch(0.55 0.13 30);
+
+  --race-red: oklch(0.58 0.24 27);
+  --race-black: oklch(0.14 0.005 0);
+  --race-yellow: oklch(0.88 0.18 95);
 }
 
 .dark {
