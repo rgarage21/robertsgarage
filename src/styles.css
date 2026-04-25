@@ -77,6 +77,17 @@
   --color-trust-red: var(--trust-red);
   --color-trust-cream: var(--trust-cream);
   --color-trust-steel: var(--trust-steel);
+
+  /* Editorial tokens */
+  --color-edit-bone: var(--edit-bone);
+  --color-edit-ink: var(--edit-ink);
+  --color-edit-rule: var(--edit-rule);
+  --color-edit-accent: var(--edit-accent);
+
+  /* Race tokens */
+  --color-race-red: var(--race-red);
+  --color-race-black: var(--race-black);
+  --color-race-yellow: var(--race-yellow);
 }
 
 :root {
