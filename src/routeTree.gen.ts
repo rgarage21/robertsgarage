@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrustRouteImport } from './routes/trust'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as RaceYellowRouteImport } from './routes/race-yellow'
+import { Route as RaceRedRouteImport } from './routes/race-red'
+import { Route as RaceBlueRouteImport } from './routes/race-blue'
 import { Route as RaceRouteImport } from './routes/race'
 import { Route as EditorialRouteImport } from './routes/editorial'
 import { Route as CustomRouteImport } from './routes/custom'
@@ -25,6 +28,21 @@ const TrustRoute = TrustRouteImport.update({
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RaceYellowRoute = RaceYellowRouteImport.update({
+  id: '/race-yellow',
+  path: '/race-yellow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RaceRedRoute = RaceRedRouteImport.update({
+  id: '/race-red',
+  path: '/race-red',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RaceBlueRoute = RaceBlueRouteImport.update({
+  id: '/race-blue',
+  path: '/race-blue',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RaceRoute = RaceRouteImport.update({
@@ -59,6 +77,9 @@ export interface FileRoutesByFullPath {
   '/custom': typeof CustomRoute
   '/editorial': typeof EditorialRoute
   '/race': typeof RaceRoute
+  '/race-blue': typeof RaceBlueRoute
+  '/race-red': typeof RaceRedRoute
+  '/race-yellow': typeof RaceYellowRoute
   '/shop': typeof ShopRoute
   '/trust': typeof TrustRoute
 }
@@ -68,6 +89,9 @@ export interface FileRoutesByTo {
   '/custom': typeof CustomRoute
   '/editorial': typeof EditorialRoute
   '/race': typeof RaceRoute
+  '/race-blue': typeof RaceBlueRoute
+  '/race-red': typeof RaceRedRoute
+  '/race-yellow': typeof RaceYellowRoute
   '/shop': typeof ShopRoute
   '/trust': typeof TrustRoute
 }
@@ -78,6 +102,9 @@ export interface FileRoutesById {
   '/custom': typeof CustomRoute
   '/editorial': typeof EditorialRoute
   '/race': typeof RaceRoute
+  '/race-blue': typeof RaceBlueRoute
+  '/race-red': typeof RaceRedRoute
+  '/race-yellow': typeof RaceYellowRoute
   '/shop': typeof ShopRoute
   '/trust': typeof TrustRoute
 }
@@ -89,10 +116,23 @@ export interface FileRouteTypes {
     | '/custom'
     | '/editorial'
     | '/race'
+    | '/race-blue'
+    | '/race-red'
+    | '/race-yellow'
     | '/shop'
     | '/trust'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/custom' | '/editorial' | '/race' | '/shop' | '/trust'
+  to:
+    | '/'
+    | '/contact'
+    | '/custom'
+    | '/editorial'
+    | '/race'
+    | '/race-blue'
+    | '/race-red'
+    | '/race-yellow'
+    | '/shop'
+    | '/trust'
   id:
     | '__root__'
     | '/'
@@ -100,6 +140,9 @@ export interface FileRouteTypes {
     | '/custom'
     | '/editorial'
     | '/race'
+    | '/race-blue'
+    | '/race-red'
+    | '/race-yellow'
     | '/shop'
     | '/trust'
   fileRoutesById: FileRoutesById
@@ -110,6 +153,9 @@ export interface RootRouteChildren {
   CustomRoute: typeof CustomRoute
   EditorialRoute: typeof EditorialRoute
   RaceRoute: typeof RaceRoute
+  RaceBlueRoute: typeof RaceBlueRoute
+  RaceRedRoute: typeof RaceRedRoute
+  RaceYellowRoute: typeof RaceYellowRoute
   ShopRoute: typeof ShopRoute
   TrustRoute: typeof TrustRoute
 }
@@ -128,6 +174,27 @@ declare module '@tanstack/react-router' {
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/race-yellow': {
+      id: '/race-yellow'
+      path: '/race-yellow'
+      fullPath: '/race-yellow'
+      preLoaderRoute: typeof RaceYellowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/race-red': {
+      id: '/race-red'
+      path: '/race-red'
+      fullPath: '/race-red'
+      preLoaderRoute: typeof RaceRedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/race-blue': {
+      id: '/race-blue'
+      path: '/race-blue'
+      fullPath: '/race-blue'
+      preLoaderRoute: typeof RaceBlueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/race': {
@@ -174,6 +241,9 @@ const rootRouteChildren: RootRouteChildren = {
   CustomRoute: CustomRoute,
   EditorialRoute: EditorialRoute,
   RaceRoute: RaceRoute,
+  RaceBlueRoute: RaceBlueRoute,
+  RaceRedRoute: RaceRedRoute,
+  RaceYellowRoute: RaceYellowRoute,
   ShopRoute: ShopRoute,
   TrustRoute: TrustRoute,
 }
