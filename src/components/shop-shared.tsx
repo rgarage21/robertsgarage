@@ -1,44 +1,4 @@
-import { Link } from "@tanstack/react-router";
 import { SHOP } from "@/lib/shop";
-
-type ConceptKey = "custom" | "trust" | "editorial" | "race" | "shop";
-
-const CONCEPTS: { key: ConceptKey; to: string; label: string }[] = [
-  { key: "custom", to: "/custom", label: "01" },
-  { key: "trust", to: "/trust", label: "02" },
-  { key: "editorial", to: "/editorial", label: "03" },
-  { key: "race", to: "/race", label: "04" },
-  { key: "shop", to: "/shop", label: "05" },
-];
-
-export function ConceptSwitcher({ current }: { current: ConceptKey }) {
-  return (
-    <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/20 bg-black/70 px-2 py-1.5 text-xs backdrop-blur-md">
-      <div className="flex items-center gap-1 text-white">
-        <Link
-          to="/"
-          className="rounded-full px-3 py-1 text-white/70 hover:text-white"
-        >
-          ← All
-        </Link>
-        {CONCEPTS.map((c) => (
-          <Link
-            key={c.key}
-            to={c.to}
-            className={
-              "rounded-full px-3 py-1 transition " +
-              (current === c.key
-                ? "bg-white text-black"
-                : "text-white/70 hover:text-white")
-            }
-          >
-            {c.label}
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export function StarRow({ n = 5 }: { n?: number }) {
   return (
