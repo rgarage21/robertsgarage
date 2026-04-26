@@ -9,27 +9,12 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TrustRouteImport } from './routes/trust'
-import { Route as ShopRouteImport } from './routes/shop'
 import { Route as RaceYellowRouteImport } from './routes/race-yellow'
 import { Route as RaceRedRouteImport } from './routes/race-red'
 import { Route as RaceBlueRouteImport } from './routes/race-blue'
-import { Route as RaceRouteImport } from './routes/race'
-import { Route as EditorialRouteImport } from './routes/editorial'
-import { Route as CustomRouteImport } from './routes/custom'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
-const TrustRoute = TrustRouteImport.update({
-  id: '/trust',
-  path: '/trust',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ShopRoute = ShopRouteImport.update({
-  id: '/shop',
-  path: '/shop',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const RaceYellowRoute = RaceYellowRouteImport.update({
   id: '/race-yellow',
   path: '/race-yellow',
@@ -43,21 +28,6 @@ const RaceRedRoute = RaceRedRouteImport.update({
 const RaceBlueRoute = RaceBlueRouteImport.update({
   id: '/race-blue',
   path: '/race-blue',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RaceRoute = RaceRouteImport.update({
-  id: '/race',
-  path: '/race',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EditorialRoute = EditorialRouteImport.update({
-  id: '/editorial',
-  path: '/editorial',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CustomRoute = CustomRouteImport.update({
-  id: '/custom',
-  path: '/custom',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -74,108 +44,49 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/custom': typeof CustomRoute
-  '/editorial': typeof EditorialRoute
-  '/race': typeof RaceRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
-  '/shop': typeof ShopRoute
-  '/trust': typeof TrustRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/custom': typeof CustomRoute
-  '/editorial': typeof EditorialRoute
-  '/race': typeof RaceRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
-  '/shop': typeof ShopRoute
-  '/trust': typeof TrustRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/custom': typeof CustomRoute
-  '/editorial': typeof EditorialRoute
-  '/race': typeof RaceRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
-  '/shop': typeof ShopRoute
-  '/trust': typeof TrustRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/contact'
-    | '/custom'
-    | '/editorial'
-    | '/race'
-    | '/race-blue'
-    | '/race-red'
-    | '/race-yellow'
-    | '/shop'
-    | '/trust'
+  fullPaths: '/' | '/contact' | '/race-blue' | '/race-red' | '/race-yellow'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/custom'
-    | '/editorial'
-    | '/race'
-    | '/race-blue'
-    | '/race-red'
-    | '/race-yellow'
-    | '/shop'
-    | '/trust'
+  to: '/' | '/contact' | '/race-blue' | '/race-red' | '/race-yellow'
   id:
     | '__root__'
     | '/'
     | '/contact'
-    | '/custom'
-    | '/editorial'
-    | '/race'
     | '/race-blue'
     | '/race-red'
     | '/race-yellow'
-    | '/shop'
-    | '/trust'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  CustomRoute: typeof CustomRoute
-  EditorialRoute: typeof EditorialRoute
-  RaceRoute: typeof RaceRoute
   RaceBlueRoute: typeof RaceBlueRoute
   RaceRedRoute: typeof RaceRedRoute
   RaceYellowRoute: typeof RaceYellowRoute
-  ShopRoute: typeof ShopRoute
-  TrustRoute: typeof TrustRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/trust': {
-      id: '/trust'
-      path: '/trust'
-      fullPath: '/trust'
-      preLoaderRoute: typeof TrustRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shop': {
-      id: '/shop'
-      path: '/shop'
-      fullPath: '/shop'
-      preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/race-yellow': {
       id: '/race-yellow'
       path: '/race-yellow'
@@ -195,27 +106,6 @@ declare module '@tanstack/react-router' {
       path: '/race-blue'
       fullPath: '/race-blue'
       preLoaderRoute: typeof RaceBlueRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/race': {
-      id: '/race'
-      path: '/race'
-      fullPath: '/race'
-      preLoaderRoute: typeof RaceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/editorial': {
-      id: '/editorial'
-      path: '/editorial'
-      fullPath: '/editorial'
-      preLoaderRoute: typeof EditorialRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/custom': {
-      id: '/custom'
-      path: '/custom'
-      fullPath: '/custom'
-      preLoaderRoute: typeof CustomRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -238,14 +128,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  CustomRoute: CustomRoute,
-  EditorialRoute: EditorialRoute,
-  RaceRoute: RaceRoute,
   RaceBlueRoute: RaceBlueRoute,
   RaceRedRoute: RaceRedRoute,
   RaceYellowRoute: RaceYellowRoute,
-  ShopRoute: ShopRoute,
-  TrustRoute: TrustRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
