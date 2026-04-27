@@ -9,26 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as RaceYellowRouteImport } from './routes/race-yellow'
 import { Route as RaceRedRouteImport } from './routes/race-red'
-import { Route as RaceBlueRouteImport } from './routes/race-blue'
 import { Route as NeighborhoodRedRouteImport } from './routes/neighborhood-red'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
-const RaceYellowRoute = RaceYellowRouteImport.update({
-  id: '/race-yellow',
-  path: '/race-yellow',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const RaceRedRoute = RaceRedRouteImport.update({
   id: '/race-red',
   path: '/race-red',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RaceBlueRoute = RaceBlueRouteImport.update({
-  id: '/race-blue',
-  path: '/race-blue',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NeighborhoodRedRoute = NeighborhoodRedRouteImport.update({
@@ -51,84 +39,43 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/neighborhood-red': typeof NeighborhoodRedRoute
-  '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
-  '/race-yellow': typeof RaceYellowRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/neighborhood-red': typeof NeighborhoodRedRoute
-  '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
-  '/race-yellow': typeof RaceYellowRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/neighborhood-red': typeof NeighborhoodRedRoute
-  '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
-  '/race-yellow': typeof RaceYellowRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/contact'
-    | '/neighborhood-red'
-    | '/race-blue'
-    | '/race-red'
-    | '/race-yellow'
+  fullPaths: '/' | '/contact' | '/neighborhood-red' | '/race-red'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/neighborhood-red'
-    | '/race-blue'
-    | '/race-red'
-    | '/race-yellow'
-  id:
-    | '__root__'
-    | '/'
-    | '/contact'
-    | '/neighborhood-red'
-    | '/race-blue'
-    | '/race-red'
-    | '/race-yellow'
+  to: '/' | '/contact' | '/neighborhood-red' | '/race-red'
+  id: '__root__' | '/' | '/contact' | '/neighborhood-red' | '/race-red'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   NeighborhoodRedRoute: typeof NeighborhoodRedRoute
-  RaceBlueRoute: typeof RaceBlueRoute
   RaceRedRoute: typeof RaceRedRoute
-  RaceYellowRoute: typeof RaceYellowRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/race-yellow': {
-      id: '/race-yellow'
-      path: '/race-yellow'
-      fullPath: '/race-yellow'
-      preLoaderRoute: typeof RaceYellowRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/race-red': {
       id: '/race-red'
       path: '/race-red'
       fullPath: '/race-red'
       preLoaderRoute: typeof RaceRedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/race-blue': {
-      id: '/race-blue'
-      path: '/race-blue'
-      fullPath: '/race-blue'
-      preLoaderRoute: typeof RaceBlueRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/neighborhood-red': {
@@ -159,9 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   NeighborhoodRedRoute: NeighborhoodRedRoute,
-  RaceBlueRoute: RaceBlueRoute,
   RaceRedRoute: RaceRedRoute,
-  RaceYellowRoute: RaceYellowRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
