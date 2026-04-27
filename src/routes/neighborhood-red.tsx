@@ -107,11 +107,11 @@ function NeighborhoodRed() {
               Family-run on Hwy 6 since day one
             </div>
             <h1 className="mt-5 text-5xl font-black leading-[1.05] tracking-tight md:text-6xl">
-              Your neighborhood mechanic in{" "}
-              <span style={{ color: ACCENT }}>Rosharon.</span>
+              The shop your{" "}
+              <span style={{ color: ACCENT }}>neighbors trust.</span>
             </h1>
             <p className="mt-5 max-w-lg text-lg text-neutral-600">
-              Brakes, A/C, diagnostics, tune ups, and the tough stuff other shops won't touch. Honest pricing, clear answers, and work that holds up — that's the deal.
+              Diagnostics, brakes, A/C, and more — done right, with honest pricing and no surprises.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
