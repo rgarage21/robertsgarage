@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroRed from "@/assets/hero-race.jpg";
 import heroNeighborhood from "@/assets/hero-neighborhood.jpg";
+import heroNeighborhoodDark from "@/assets/hero-neighborhood-dark.jpg";
 import { SHOP } from "@/lib/shop";
 
 export const Route = createFileRoute("/")({
@@ -34,6 +35,14 @@ const VARIANTS = [
     image: heroNeighborhood,
     accent: "oklch(0.58 0.24 27)",
   },
+  {
+    to: "/neighborhood-dark",
+    tag: "Concept 03 · Neighborhood Dark",
+    title: "Neighborhood Dark",
+    desc: "Trustworthy mechanic tone in a cooler, hi-tech dark aesthetic with red glow accents.",
+    image: heroNeighborhoodDark,
+    accent: "oklch(0.62 0.24 27)",
+  },
 ] as const;
 
 function Index() {
@@ -65,7 +74,7 @@ function Index() {
         </p>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-24 md:grid-cols-2">
+      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-24 md:grid-cols-3">
         {VARIANTS.map((v) => (
           <Link
             key={v.to}
