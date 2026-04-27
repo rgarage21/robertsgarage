@@ -411,7 +411,14 @@ function RaceSwitcher({ current: _current }: { current: RaceVariant }) {
           className="flex items-center gap-2 rounded-full px-3 py-1 text-white/70 hover:text-white"
         >
           <span aria-hidden className="inline-block h-2 w-2 rounded-full" style={{ background: "oklch(0.58 0.24 27)" }} />
-          Neighborhood Red
+          Neighborhood
+        </Link>
+        <Link
+          to="/neighborhood-dark"
+          className="flex items-center gap-2 rounded-full px-3 py-1 text-white/70 hover:text-white"
+        >
+          <span aria-hidden className="inline-block h-2 w-2 rounded-full" style={{ background: "oklch(0.62 0.24 27)" }} />
+          Neighborhood Dark
         </Link>
       </div>
     </div>
