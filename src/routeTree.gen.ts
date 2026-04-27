@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as RaceYellowRouteImport } from './routes/race-yellow'
 import { Route as RaceRedRouteImport } from './routes/race-red'
 import { Route as RaceBlueRouteImport } from './routes/race-blue'
+import { Route as NeighborhoodRedRouteImport } from './routes/neighborhood-red'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const RaceBlueRoute = RaceBlueRouteImport.update({
   path: '/race-blue',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NeighborhoodRedRoute = NeighborhoodRedRouteImport.update({
+  id: '/neighborhood-red',
+  path: '/neighborhood-red',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/neighborhood-red': typeof NeighborhoodRedRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/neighborhood-red': typeof NeighborhoodRedRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
@@ -59,19 +67,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/neighborhood-red': typeof NeighborhoodRedRoute
   '/race-blue': typeof RaceBlueRoute
   '/race-red': typeof RaceRedRoute
   '/race-yellow': typeof RaceYellowRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/race-blue' | '/race-red' | '/race-yellow'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/neighborhood-red'
+    | '/race-blue'
+    | '/race-red'
+    | '/race-yellow'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/race-blue' | '/race-red' | '/race-yellow'
+  to:
+    | '/'
+    | '/contact'
+    | '/neighborhood-red'
+    | '/race-blue'
+    | '/race-red'
+    | '/race-yellow'
   id:
     | '__root__'
     | '/'
     | '/contact'
+    | '/neighborhood-red'
     | '/race-blue'
     | '/race-red'
     | '/race-yellow'
@@ -80,6 +102,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  NeighborhoodRedRoute: typeof NeighborhoodRedRoute
   RaceBlueRoute: typeof RaceBlueRoute
   RaceRedRoute: typeof RaceRedRoute
   RaceYellowRoute: typeof RaceYellowRoute
@@ -108,6 +131,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RaceBlueRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/neighborhood-red': {
+      id: '/neighborhood-red'
+      path: '/neighborhood-red'
+      fullPath: '/neighborhood-red'
+      preLoaderRoute: typeof NeighborhoodRedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -128,6 +158,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  NeighborhoodRedRoute: NeighborhoodRedRoute,
   RaceBlueRoute: RaceBlueRoute,
   RaceRedRoute: RaceRedRoute,
   RaceYellowRoute: RaceYellowRoute,
