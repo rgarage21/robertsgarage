@@ -1,18 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroRed from "@/assets/hero-race.jpg";
-import heroBlue from "@/assets/hero-race-blue.jpg";
-import heroYellow from "@/assets/hero-race-yellow.jpg";
 import heroNeighborhood from "@/assets/hero-neighborhood.jpg";
 import { SHOP } from "@/lib/shop";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: `${SHOP.name} — Pick a Color` },
+      { title: `${SHOP.name} — Concept Directions` },
       {
         name: "description",
         content:
-          "Race-shop concept for Roberts Garage in Rosharon, TX — pick a color direction.",
+          "Two red concept directions for Roberts Garage in Rosharon, TX.",
       },
     ],
   }),
@@ -22,31 +20,15 @@ export const Route = createFileRoute("/")({
 const VARIANTS = [
   {
     to: "/race-red",
-    tag: "Variant 01 · Red",
+    tag: "Concept 01 · Race",
     title: "Race Red",
-    desc: "Classic motorsport red — aggressive, fast, instantly recognizable.",
+    desc: "Bold motorsport energy — stencil type, race photography, performance-first voice.",
     image: heroRed,
     accent: "oklch(0.58 0.24 27)",
   },
   {
-    to: "/race-blue",
-    tag: "Variant 02 · Blue",
-    title: "Race Blue",
-    desc: "Electric blue — precision, technical, modern performance feel.",
-    image: heroBlue,
-    accent: "oklch(0.55 0.22 255)",
-  },
-  {
-    to: "/race-yellow",
-    tag: "Variant 03 · Yellow",
-    title: "Race Yellow",
-    desc: "High-visibility yellow — bold, loud, hard to scroll past.",
-    image: heroYellow,
-    accent: "oklch(0.86 0.18 92)",
-  },
-  {
     to: "/neighborhood-red",
-    tag: "Variant 04 · Neighborhood",
+    tag: "Concept 02 · Neighborhood",
     title: "Neighborhood Red",
     desc: "Same red, dialed for trust — friendly mechanic, clean type, everyday repair.",
     image: heroNeighborhood,
@@ -71,19 +53,19 @@ function Index() {
 
       <section className="mx-auto max-w-7xl px-6 pb-10 pt-6">
         <p className="font-mono-2 text-xs uppercase tracking-[0.3em] text-white/60">
-          Race-shop concept · pick a color
+          Roberts Garage · concept directions
         </p>
         <h1 className="mt-3 max-w-3xl font-stencil text-5xl leading-[0.95] tracking-tight md:text-7xl">
-          Same race-shop layout. Three color directions.
+          Two red directions. Same brand.
         </h1>
         <p className="mt-4 max-w-2xl text-white/70">
-          Click a variant to see the full landing page. All three share the
-          same services, contact info, and Google reviews — only the color
-          accent and hero photo change.
+          Click a concept to see the full landing page. Both share the same
+          services, contact info, and Google reviews — the difference is tone:
+          performance-first vs. neighborhood-first.
         </p>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-24 md:grid-cols-2 lg:grid-cols-4">
+      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-24 md:grid-cols-2">
         {VARIANTS.map((v) => (
           <Link
             key={v.to}

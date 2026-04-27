@@ -27,9 +27,8 @@ function ContactPage() {
           {SHOP.name}
         </Link>
         <nav className="flex gap-5 text-sm text-muted-foreground">
-          <Link to="/race-red" className="hover:text-foreground">Red</Link>
-          <Link to="/race-blue" className="hover:text-foreground">Blue</Link>
-          <Link to="/race-yellow" className="hover:text-foreground">Yellow</Link>
+          <Link to="/race-red" className="hover:text-foreground">Race</Link>
+          <Link to="/neighborhood-red" className="hover:text-foreground">Neighborhood</Link>
         </nav>
       </header>
 

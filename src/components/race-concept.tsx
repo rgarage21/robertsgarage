@@ -392,35 +392,27 @@ export function RaceConcept({
   );
 }
 
-function RaceSwitcher({ current }: { current: RaceVariant }) {
-  const opts: { key: RaceVariant; to: string; label: string; dot: string }[] = [
-    { key: "red", to: "/race-red", label: "Red", dot: "oklch(0.58 0.24 27)" },
-    { key: "blue", to: "/race-blue", label: "Blue", dot: "oklch(0.55 0.22 255)" },
-    { key: "yellow", to: "/race-yellow", label: "Yellow", dot: "oklch(0.86 0.18 92)" },
-  ];
+function RaceSwitcher({ current: _current }: { current: RaceVariant }) {
   return (
     <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/20 bg-black/80 px-2 py-1.5 text-xs backdrop-blur-md">
       <div className="flex items-center gap-1 text-white">
         <Link to="/" className="rounded-full px-3 py-1 text-white/70 hover:text-white">
           ← All
         </Link>
-        {opts.map((o) => (
-          <Link
-            key={o.key}
-            to={o.to}
-            className={
-              "flex items-center gap-2 rounded-full px-3 py-1 transition " +
-              (current === o.key ? "bg-white text-black" : "text-white/70 hover:text-white")
-            }
-          >
-            <span
-              aria-hidden
-              className="inline-block h-2 w-2 rounded-full"
-              style={{ background: o.dot }}
-            />
-            {o.label}
-          </Link>
-        ))}
+        <Link
+          to="/race-red"
+          className="flex items-center gap-2 rounded-full bg-white px-3 py-1 text-black"
+        >
+          <span aria-hidden className="inline-block h-2 w-2 rounded-full" style={{ background: "oklch(0.58 0.24 27)" }} />
+          Race Red
+        </Link>
+        <Link
+          to="/neighborhood-red"
+          className="flex items-center gap-2 rounded-full px-3 py-1 text-white/70 hover:text-white"
+        >
+          <span aria-hidden className="inline-block h-2 w-2 rounded-full" style={{ background: "oklch(0.58 0.24 27)" }} />
+          Neighborhood Red
+        </Link>
       </div>
     </div>
   );
