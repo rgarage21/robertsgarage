@@ -434,7 +434,14 @@ function NeighborhoodRed() {
             className="flex items-center gap-2 rounded-full bg-neutral-900 px-3 py-1 text-white"
           >
             <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
-            Neighborhood Red
+            Neighborhood
+          </Link>
+          <Link
+            to="/neighborhood-dark"
+            className="flex items-center gap-2 rounded-full px-3 py-1 text-neutral-600 hover:text-neutral-900"
+          >
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+            Neighborhood Dark
           </Link>
         </div>
       </div>

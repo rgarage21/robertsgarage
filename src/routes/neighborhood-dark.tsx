@@ -1,0 +1,469 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import heroDark from "@/assets/hero-neighborhood-dark.jpg";
+import { SERVICE_BLURBS, SHOP, StarRow } from "@/components/shop-shared";
+
+const ACCENT = "oklch(0.62 0.24 27)"; // race red, slightly brighter for dark bg
+const ACCENT_GLOW = "oklch(0.7 0.22 25)";
+
+export const Route = createFileRoute("/neighborhood-dark")({
+  head: () => ({
+    meta: [
+      { title: `${SHOP.name} — Modern Auto Repair · Rosharon, TX` },
+      {
+        name: "description",
+        content:
+          "Precision diagnostics, honest pricing, and modern auto repair in Rosharon. Brakes, A/C, electrical, tune ups — done right the first time.",
+      },
+      { property: "og:title", content: `${SHOP.name} — Modern Auto Repair · Rosharon, TX` },
+      {
+        property: "og:description",
+        content: "Modern, dependable auto repair on Hwy 6. Real diagnostics, fair pricing, lasting work.",
+      },
+      { property: "og:image", content: heroDark },
+      { name: "twitter:image", content: heroDark },
+    ],
+  }),
+  component: NeighborhoodDark,
+});
+
+const PROMISES = [
+  {
+    t: "We explain what we did",
+    d: "No vague bills, no upsells. You'll know exactly what was wrong and why it cost what it cost.",
+  },
+  {
+    t: "Fair, written estimates",
+    d: "Approve the work before we start. If something else turns up, we call before touching it.",
+  },
+  {
+    t: "Work that lasts",
+    d: "Quality parts, careful labor, and a warranty on most repairs. Built to hold up.",
+  },
+];
+
+const COMMON = [
+  { q: "Car won't start?", a: "Battery, starter, or a deeper electrical issue — we'll find it the first time." },
+  { q: "A/C blowing warm?", a: "Recharges, leaks, compressor swaps. Cold air, same day on most jobs." },
+  { q: "Check engine light?", a: "Real diagnostics — not just a code read. We tell you what it actually means." },
+  { q: "Squealing brakes?", a: "Pads, rotors, calipers, lines. Quiet, confident stops every time." },
+];
+
+function NeighborhoodDark() {
+  return (
+    <main className="min-h-screen bg-black text-white">
+      {/* Top utility bar */}
+      <div
+        className="border-b border-white/10 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70"
+      >
+        <div className="mx-auto max-w-7xl px-6 py-2">
+          <span
+            className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full"
+            style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
+          />
+          Open today · Closes 7 PM · Walk-ins welcome on Hwy 6
+        </div>
+      </div>
+
+      {/* Header */}
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <Link to="/" className="flex items-baseline gap-2">
+            <span className="text-2xl font-black tracking-tight">
+              <span style={{ color: ACCENT }}>Roberts</span> Garage
+            </span>
+            <span className="hidden text-xs font-medium text-white/40 sm:inline">
+              · Rosharon, TX
+            </span>
+          </Link>
+          <nav className="hidden items-center gap-7 text-sm font-medium text-white/70 md:flex">
+            <a href="#services" className="hover:text-white">Services</a>
+            <a href="#promise" className="hover:text-white">Our promise</a>
+            <a href="#reviews" className="hover:text-white">Reviews</a>
+            <a href="#visit" className="hover:text-white">Visit</a>
+            <Link to="/contact" className="hover:text-white">Contact</Link>
+          </nav>
+          <a
+            href={SHOP.phoneHref}
+            className="rounded-full px-4 py-2 text-sm font-bold text-white transition hover:opacity-90"
+            style={{ background: ACCENT, boxShadow: `0 0 24px -6px ${ACCENT_GLOW}` }}
+          >
+            Call {SHOP.phone}
+          </a>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-white/10">
+        <img
+          src={heroDark}
+          alt="Modern auto repair shop interior at Roberts Garage in Rosharon, TX"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover opacity-50"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.85) 100%)",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full opacity-30 blur-3xl"
+          style={{ background: ACCENT }}
+        />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:py-32">
+          <div className="max-w-3xl">
+            <div
+              className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold backdrop-blur"
+              style={{ borderColor: `${ACCENT}`, color: ACCENT_GLOW, background: "rgba(255,255,255,0.03)" }}
+            >
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
+              />
+              Family-run on Hwy 6 since day one
+            </div>
+            <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
+              Your neighborhood mechanic —{" "}
+              <span
+                style={{
+                  background: `linear-gradient(180deg, ${ACCENT_GLOW}, ${ACCENT})`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                with a modern bay.
+              </span>
+            </h1>
+            <p className="mt-6 max-w-xl text-lg text-white/70">
+              Brakes, A/C, diagnostics, tune ups, and the tough stuff other shops won't touch. Honest pricing, clear answers, and work that holds up — that's the deal.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a
+                href={SHOP.phoneHref}
+                className="rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+                style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+              >
+                Call {SHOP.phone}
+              </a>
+              <a
+                href={SHOP.smsHref}
+                className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white backdrop-blur transition hover:border-white/50"
+              >
+                Text for a quote
+              </a>
+            </div>
+            <div className="mt-9 flex items-center gap-3 text-sm text-white/60">
+              <span style={{ color: ACCENT_GLOW }}>
+                <StarRow n={5} />
+              </span>
+              <span>
+                <strong className="text-white">5.0</strong> on Google · trusted by drivers across Brazoria County
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Promise strip */}
+      <section id="promise" className="border-b border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-[0.25em]"
+                style={{ color: ACCENT_GLOW }}
+              >
+                Our promise
+              </p>
+              <h2 className="mt-3 max-w-xl text-4xl font-black tracking-tight md:text-5xl">
+                The shop your neighbor told you about.
+              </h2>
+            </div>
+            <p className="max-w-md text-white/60">
+              We treat every car like it's parked in our own driveway — clear communication, fair prices, and repairs we'd trust on our own family.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
+            {PROMISES.map((p, i) => (
+              <article
+                key={p.t}
+                className="bg-neutral-950 p-7 transition hover:bg-neutral-900"
+              >
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-black text-white"
+                  style={{ background: ACCENT, boxShadow: `0 0 20px -4px ${ACCENT_GLOW}` }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </div>
+                <h3 className="mt-5 text-xl font-bold">{p.t}</h3>
+                <p className="mt-2 text-white/60">{p.d}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="border-b border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-[0.25em]"
+                style={{ color: ACCENT_GLOW }}
+              >
+                What we do
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+                Everyday repair. Done right.
+              </h2>
+            </div>
+            <p className="max-w-md text-white/60">
+              Same-day on most jobs. If we can't fix it today, you'll know before you leave the counter.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            {SHOP.services.map((s) => (
+              <article key={s} className="group bg-neutral-950 p-6 transition hover:bg-neutral-900">
+                <div
+                  className="h-1 w-8 rounded-full transition-all group-hover:w-16"
+                  style={{ background: ACCENT, boxShadow: `0 0 12px ${ACCENT_GLOW}` }}
+                />
+                <h3 className="mt-4 text-lg font-bold">{s}</h3>
+                <p className="mt-2 text-sm text-white/60">
+                  {SERVICE_BLURBS[s] ?? "Pro-level work, fair pricing, fast turnaround."}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common questions / problems */}
+      <section className="relative overflow-hidden border-b border-white/10 py-24">
+        <div
+          className="pointer-events-none absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full opacity-20 blur-3xl"
+          style={{ background: ACCENT }}
+        />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <p
+            className="text-xs font-bold uppercase tracking-[0.25em]"
+            style={{ color: ACCENT_GLOW }}
+          >
+            Sound familiar?
+          </p>
+          <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight md:text-5xl">
+            We hear these every week — and we fix them.
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {COMMON.map((c) => (
+              <div
+                key={c.q}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur transition hover:border-white/20"
+              >
+                <h3 className="text-xl font-bold" style={{ color: ACCENT_GLOW }}>
+                  {c.q}
+                </h3>
+                <p className="mt-2 text-white/70">{c.a}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <a
+              href={SHOP.phoneHref}
+              className="inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+              style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+            >
+              Talk to a real mechanic — {SHOP.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="border-b border-white/10 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-[0.25em]"
+                style={{ color: ACCENT_GLOW }}
+              >
+                Neighbors are talking
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+                Real reviews from real Rosharon drivers.
+              </h2>
+            </div>
+            <a
+              href={SHOP.reviewsHref}
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-bold underline-offset-4 hover:underline"
+              style={{ color: ACCENT_GLOW }}
+            >
+              Read all reviews on Google →
+            </a>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {SHOP.reviews.map((r) => (
+              <article
+                key={r.name}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20"
+              >
+                <span style={{ color: ACCENT_GLOW }}>
+                  <StarRow n={r.rating} />
+                </span>
+                <p className="mt-4 text-lg leading-snug text-white/90">
+                  "{r.text}"
+                </p>
+                <footer className="mt-5 flex items-center justify-between border-t border-white/10 pt-4 text-sm">
+                  <span className="font-bold">{r.name}</span>
+                  <span className="text-white/50">{r.vehicle}</span>
+                </footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Visit / CTA */}
+      <section id="visit" className="py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
+          <div>
+            <p
+              className="text-xs font-bold uppercase tracking-[0.25em]"
+              style={{ color: ACCENT_GLOW }}
+            >
+              Drop by
+            </p>
+            <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+              Easy to find. Easier to trust.
+            </h2>
+            <p className="mt-5 max-w-md text-white/60">
+              Pull into the lot on Hwy 6. We'll meet you at the bay door, take a look, and tell you straight what your car needs — and what it doesn't.
+            </p>
+            <dl className="mt-8 space-y-5 text-base">
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-widest text-white/40">Address</dt>
+                <dd className="mt-1 font-medium text-white/90">{SHOP.address}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-widest text-white/40">Phone</dt>
+                <dd className="mt-1 font-medium text-white/90">
+                  <a href={SHOP.phoneHref} className="hover:underline">{SHOP.phone}</a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-bold uppercase tracking-widest text-white/40">Hours</dt>
+                <dd className="mt-1 font-medium text-white/90">{SHOP.hours}</dd>
+              </div>
+            </dl>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={SHOP.mapsHref}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+                style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+              >
+                Get directions
+              </a>
+              <Link
+                to="/contact"
+                className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:border-white/50"
+              >
+                Send a message
+              </Link>
+            </div>
+          </div>
+
+          <div
+            className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-950 to-neutral-900 p-10"
+          >
+            <div
+              className="absolute inset-x-0 top-0 h-px"
+              style={{ background: `linear-gradient(90deg, transparent, ${ACCENT_GLOW}, transparent)` }}
+            />
+            <div
+              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-20 blur-3xl"
+              style={{ background: ACCENT }}
+            />
+            <p
+              className="relative text-xs font-bold uppercase tracking-[0.25em]"
+              style={{ color: ACCENT_GLOW }}
+            >
+              The deal
+            </p>
+            <h3 className="relative mt-3 text-3xl font-black leading-tight">
+              Honest mechanics, on your block.
+            </h3>
+            <ul className="relative mt-6 space-y-4 text-white/70">
+              {[
+                "Free written estimates before any work begins",
+                "Warranty on most parts and labor",
+                "Loaner-friendly scheduling — we'll work around you",
+                "Diagnostics done right the first time",
+              ].map((line) => (
+                <li key={line} className="flex items-start gap-3">
+                  <span
+                    className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                    style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
+                  />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={SHOP.phoneHref}
+              className="relative mt-8 inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+              style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+            >
+              Call {SHOP.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="border-t border-white/10 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
+          <span>© {SHOP.name} — {SHOP.city}</span>
+          <span>{SHOP.address}</span>
+        </div>
+      </footer>
+
+      {/* Variant switcher */}
+      <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/20 bg-black/80 px-2 py-1.5 text-xs shadow-lg backdrop-blur-md">
+        <div className="flex items-center gap-1 text-white">
+          <Link to="/" className="rounded-full px-3 py-1 text-white/60 hover:text-white">
+            ← All
+          </Link>
+          <Link
+            to="/race-red"
+            className="flex items-center gap-2 rounded-full px-3 py-1 text-white/60 hover:text-white"
+          >
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+            Race Red
+          </Link>
+          <Link
+            to="/neighborhood-red"
+            className="flex items-center gap-2 rounded-full px-3 py-1 text-white/60 hover:text-white"
+          >
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+            Neighborhood
+          </Link>
+          <Link
+            to="/neighborhood-dark"
+            className="flex items-center gap-2 rounded-full bg-white px-3 py-1 text-black"
+          >
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+            Neighborhood Dark
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
