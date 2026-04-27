@@ -114,16 +114,6 @@ function NeighborhoodDark() {
         />
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:py-32">
           <div className="max-w-3xl">
-            <div
-              className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold backdrop-blur"
-              style={{ borderColor: `${ACCENT}`, color: ACCENT_GLOW, background: "rgba(255,255,255,0.03)" }}
-            >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
-              />
-              Family-run on Hwy 6 since day one
-            </div>
             <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
               The shop your{" "}
               <span
@@ -403,9 +393,8 @@ function NeighborhoodDark() {
             </h3>
             <ul className="relative mt-6 space-y-4 text-white/70">
               {[
-                "Free written estimates before any work begins",
+                "Free estimates before any work begins",
                 "Warranty on most parts and labor",
-                "Loaner-friendly scheduling — we'll work around you",
                 "Diagnostics done right the first time",
               ].map((line) => (
                 <li key={line} className="flex items-start gap-3">

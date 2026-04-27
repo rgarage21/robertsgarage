@@ -96,16 +96,6 @@ function NeighborhoodRed() {
       <section className="relative overflow-hidden border-b border-neutral-200">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <div
-              className="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold"
-              style={{ borderColor: ACCENT, color: ACCENT }}
-            >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ background: ACCENT }}
-              />
-              Family-run on Hwy 6 since day one
-            </div>
             <h1 className="mt-5 text-5xl font-black leading-[1.05] tracking-tight md:text-6xl">
               The shop your{" "}
               <span style={{ color: ACCENT }}>neighbors trust.</span>
@@ -384,9 +374,8 @@ function NeighborhoodRed() {
             </h3>
             <ul className="mt-6 space-y-4 text-neutral-700">
               {[
-                "Free written estimates before any work begins",
+                "Free estimates before any work begins",
                 "Warranty on most parts and labor",
-                "Loaner-friendly scheduling — we'll work around you",
                 "Diagnostics done right the first time",
               ].map((line) => (
                 <li key={line} className="flex items-start gap-3">
