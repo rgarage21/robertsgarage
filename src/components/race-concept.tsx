@@ -29,9 +29,9 @@ const THEMES: Record<RaceVariant, Theme> = {
     tagline: "Pit Lane · Hwy 6 · Rosharon, TX",
     headline: (
       <>
-        BUILT TO
+        THE SHOP YOUR
         <br />
-        <span style={{ color: "oklch(0.58 0.24 27)" }}>FINISH</span> FIRST.
+        <span style={{ color: "oklch(0.58 0.24 27)" }}>NEIGHBORS</span> TRUST.
       </>
     ),
   },
@@ -146,9 +146,8 @@ export function RaceConcept({
             {t.headline}
           </h1>
           <p className="mt-6 max-w-xl text-lg text-white/80">
-            Brakes that bite. Suspension that holds. Diagnostics that don't
-            guess. Whether it's your daily or your weekend warrior — we wrench
-            like every minute is a pit stop.
+            Diagnostics, brakes, A/C, and more — done right, with honest
+            pricing and no surprises.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a

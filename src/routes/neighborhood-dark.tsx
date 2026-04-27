@@ -125,7 +125,7 @@ function NeighborhoodDark() {
               Family-run on Hwy 6 since day one
             </div>
             <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
-              Your neighborhood mechanic —{" "}
+              The shop your{" "}
               <span
                 style={{
                   background: `linear-gradient(180deg, ${ACCENT_GLOW}, ${ACCENT})`,
@@ -133,11 +133,11 @@ function NeighborhoodDark() {
                   WebkitTextFillColor: "transparent",
                 }}
               >
-                with a modern bay.
+                neighbors trust.
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              Brakes, A/C, diagnostics, tune ups, and the tough stuff other shops won't touch. Honest pricing, clear answers, and work that holds up — that's the deal.
+              Diagnostics, brakes, A/C, and more — done right, with honest pricing and no surprises.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a
