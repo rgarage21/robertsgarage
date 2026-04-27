@@ -13,14 +13,14 @@ export const SHOP = {
   reviewsHref:
     "https://www.google.com/search?q=16120+Hwy+6+Rosharon+TX+77583+auto+repair#lrd=",
   services: [
-    "Electrical",
-    "A/C & Heating",
-    "Suspension",
-    "Brakes",
-    "Tune Ups",
-    "Diagnostics",
-    "Engine Work",
-    "Custom Builds",
+    "Engine Diagnostics",
+    "Fluid Services",
+    "HVAC System",
+    "Suspension & Steering",
+    "Battery & Electrical",
+    "Brake Service",
+    "Tune Up",
+    "Headlight Restoration",
   ],
   reviews: [
     {

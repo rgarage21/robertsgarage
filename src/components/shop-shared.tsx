@@ -18,14 +18,14 @@ export function StarRow({ n = 5 }: { n?: number }) {
 }
 
 export const SERVICE_BLURBS: Record<string, string> = {
-  Electrical: "Shorts, parasitic draws, no-starts, wiring repair.",
-  "A/C & Heating": "Recharges, compressor swaps, blower & heater core.",
-  Suspension: "Struts, shocks, ball joints, alignments — smooth ride back.",
-  Brakes: "Pads, rotors, calipers, lines, ABS diagnostics.",
-  "Tune Ups": "Plugs, coils, fluids, filters — keep it running right.",
-  Diagnostics: "Check-engine lights decoded, no guesswork.",
-  "Engine Work": "Timing, gaskets, leaks, full rebuilds.",
-  "Custom Builds": "Performance, audio, lighting, suspension — your vision.",
+  "Engine Diagnostics": "Using scanners to interpret \"check engine\" lights and sensor data.",
+  "Fluid Services": "Checking/flushing coolants, brake fluid, transmission fluid, and power steering fluid.",
+  "HVAC System": "Air conditioning and heating system repair and recharging.",
+  "Suspension & Steering": "Shock absorber, strut, and steering linkage repair.",
+  "Battery & Electrical": "Testing battery health, replacing batteries, and checking charging systems.",
+  "Brake Service": "Inspection and replacement of brake pads, rotors, calipers, and fluid.",
+  "Tune Up": "Replace spark plugs, filters, belts, and coils as needed.",
+  "Headlight Restoration": "Polish cloudy headlights for clearer night visibility.",
 };
 
 export { SHOP };
