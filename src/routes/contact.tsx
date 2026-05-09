@@ -46,11 +46,11 @@ function ContactPage() {
           </p>
 
           <dl className="mt-8 space-y-5 text-lg">
-            <Row label="Phone">
+            <Row label="Phone / Text">
               <a className="hover:underline" href={SHOP.phoneHref}>{SHOP.phone}</a>
-            </Row>
-            <Row label="Text">
-              <a className="hover:underline" href={SHOP.smsHref}>{SHOP.phone}</a>
+              <span className="ml-2 text-sm text-muted-foreground">
+                (<a className="hover:underline" href={SHOP.smsHref}>send a text</a>)
+              </span>
             </Row>
             <Row label="Email">
               <a className="hover:underline" href={SHOP.emailHref}>{SHOP.email}</a>
