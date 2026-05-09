@@ -343,13 +343,13 @@ function NeighborhoodDark() {
               className="text-xs font-bold uppercase tracking-[0.25em]"
               style={{ color: ACCENT_GLOW }}
             >
-              Drop by
+              Visit the shop
             </p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
               Easy to find. Easier to trust.
             </h2>
             <p className="mt-5 max-w-md text-white/60">
-              Pull into the lot on Hwy 6. We'll meet you at the bay door, take a look, and tell you straight what your car needs — and what it doesn't.
+              We're on Hwy 6 in Rosharon. Call or text and we'll get you on the schedule, take a look, and tell you straight what your car needs — and what it doesn't.
             </p>
             <dl className="mt-8 space-y-5 text-base">
               <div>
