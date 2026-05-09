@@ -3,8 +3,8 @@ export const SHOP = {
   phone: "(832) 800-1351",
   phoneHref: "tel:+18328001351",
   smsHref: "sms:+18328001351",
-  email: "Robertsgarage21@gmail.com",
-  emailHref: "mailto:Robertsgarage21@gmail.com",
+  email: "robertsgarage21@gmail.com",
+  emailHref: "mailto:robertsgarage21@gmail.com",
   address: "16120 Hwy 6, Rosharon, TX 77583",
   hours: "Fri 5:30–7 PM · Sat 8:30 AM–4 PM",
   hoursList: [

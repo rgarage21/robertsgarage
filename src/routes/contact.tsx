@@ -146,7 +146,7 @@ function ContactPage() {
               e.preventDefault();
               const f = new FormData(e.currentTarget);
               const body = encodeURIComponent(
-                `Name: ${f.get("name")}\nPhone: ${f.get("phone")}\nVehicle: ${f.get("vehicle")}\n\n${f.get("message")}`,
+                `Name: ${f.get("name")}\nPhone: ${f.get("phone")}\nEmail: ${f.get("email")}\nVehicle: ${f.get("vehicle")}\n\n${f.get("message")}`,
               );
               window.location.href = `${SHOP.emailHref}?subject=Service%20request&body=${body}`;
             }}
@@ -163,6 +163,7 @@ function ContactPage() {
             <div className="mt-6 grid gap-4">
               <Field name="name" label="Your name" />
               <Field name="phone" label="Phone" type="tel" />
+              <Field name="email" label="Email" type="email" />
               <Field name="vehicle" label="Vehicle (year, make, model)" />
               <Field name="message" label="What's going on?" textarea />
               <button
