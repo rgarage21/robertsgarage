@@ -345,6 +345,26 @@ export function RaceConcept({
             </article>
           ))}
         </div>
+        <div
+          className="mt-10 flex flex-col items-center gap-3 border border-dashed border-white/20 p-8 text-center"
+          style={{ background: t.panel }}
+        >
+          <p className="text-xs font-black uppercase tracking-widest text-white/60">
+            Wrenched a win for you?
+          </p>
+          <p className="max-w-md text-base text-white/80">
+            Drop a quick review on Google — it keeps the lights on at the shop.
+          </p>
+          <a
+            href={SHOP.writeReviewHref}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 inline-flex items-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-widest transition hover:opacity-90"
+            style={{ background: t.accent, color: t.ctaText }}
+          >
+            Leave a review →
+          </a>
+        </div>
       </section>
 
       {/* CTA */}
