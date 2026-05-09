@@ -423,8 +423,12 @@ function NeighborhoodRed() {
       {/* Variant switcher */}
       <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-neutral-200 bg-white/95 px-2 py-1.5 text-xs shadow-lg backdrop-blur-md">
         <div className="flex items-center gap-1">
-          <Link to="/" className="rounded-full px-3 py-1 text-neutral-500 hover:text-neutral-900">
-            ← All
+          <Link
+            to="/"
+            className="flex items-center gap-2 rounded-full px-3 py-1 text-neutral-600 hover:text-neutral-900"
+          >
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
+            Neighborhood Dark (live)
           </Link>
           <Link
             to="/race-red"
@@ -439,13 +443,6 @@ function NeighborhoodRed() {
           >
             <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
             Neighborhood
-          </Link>
-          <Link
-            to="/neighborhood-dark"
-            className="flex items-center gap-2 rounded-full px-3 py-1 text-neutral-600 hover:text-neutral-900"
-          >
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: ACCENT }} />
-            Neighborhood Dark
           </Link>
         </div>
       </div>
