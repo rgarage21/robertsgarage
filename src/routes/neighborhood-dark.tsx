@@ -60,7 +60,7 @@ function NeighborhoodDark() {
             className="mr-2 inline-block h-1.5 w-1.5 translate-y-[-1px] rounded-full"
             style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
           />
-          Open today · Closes 7 PM · Walk-ins welcome on Hwy 6
+          {SHOP.hours} · Call or text — we answer fast
         </div>
       </div>
 
