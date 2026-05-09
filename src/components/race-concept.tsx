@@ -379,7 +379,7 @@ export function RaceConcept({
             START YOUR ENGINE.
           </h2>
           <p className="mx-auto mt-4 max-w-xl opacity-90">
-            Call, text, or roll in. {SHOP.address}.
+            Call or text. {SHOP.address}.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
