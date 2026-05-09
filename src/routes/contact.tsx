@@ -65,7 +65,18 @@ function ContactPage() {
                 {SHOP.address}
               </a>
             </Row>
-            <Row label="Hours">{SHOP.hours}</Row>
+            <Row label="Hours">
+              <ul className="space-y-1 text-base">
+                {SHOP.hoursList.map((h) => (
+                  <li key={h.day} className="grid grid-cols-[110px_1fr] gap-2">
+                    <span className="font-semibold">{h.day}</span>
+                    <span className={h.time === "Closed" ? "text-muted-foreground" : ""}>
+                      {h.time}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Row>
           </dl>
 
           <a
