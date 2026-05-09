@@ -6,7 +6,16 @@ export const SHOP = {
   email: "Robertsgarage21@gmail.com",
   emailHref: "mailto:Robertsgarage21@gmail.com",
   address: "16120 Hwy 6, Rosharon, TX 77583",
-  hours: "Open today · Closes 7 PM",
+  hours: "Fri 5:30–7 PM · Sat 8:30 AM–4 PM",
+  hoursList: [
+    { day: "Friday", time: "5:30–7 PM" },
+    { day: "Saturday", time: "8:30 AM–4 PM" },
+    { day: "Sunday", time: "Closed" },
+    { day: "Monday", time: "Closed" },
+    { day: "Tuesday", time: "Closed" },
+    { day: "Wednesday", time: "Closed" },
+    { day: "Thursday", time: "Closed" },
+  ],
   city: "Rosharon, Texas",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=16120+Hwy+6+Rosharon+TX+77583",
