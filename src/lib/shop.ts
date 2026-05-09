@@ -10,8 +10,12 @@ export const SHOP = {
   city: "Rosharon, Texas",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=16120+Hwy+6+Rosharon+TX+77583",
+  placeId: "ChIJ89NCeDLvQIYRLwziSZD_fCc",
+  cid: "2881491375935753263",
   reviewsHref:
-    "https://www.google.com/search?q=16120+Hwy+6+Rosharon+TX+77583+auto+repair#lrd=",
+    "https://www.google.com/maps/place/?q=place_id:ChIJ89NCeDLvQIYRLwziSZD_fCc",
+  writeReviewHref:
+    "https://search.google.com/local/writereview?placeid=ChIJ89NCeDLvQIYRLwziSZD_fCc",
   services: [
     "Engine Diagnostics",
     "Fluid Services",
