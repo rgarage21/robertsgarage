@@ -60,7 +60,7 @@ function NeighborhoodRed() {
         style={{ background: ACCENT }}
       >
         <div className="mx-auto max-w-7xl px-6 py-2">
-          Open today · Closes 7 PM · Walk-ins welcome on Hwy 6
+          {SHOP.hours} · Call or text — we answer fast
         </div>
       </div>
 
