@@ -120,7 +120,7 @@ function NeighborhoodDark() {
           className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full opacity-30 blur-3xl"
           style={{ background: ACCENT }}
         />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 py-24 md:py-32">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-6 md:py-32 py-[96px] pt-[48px] pb-[48px]">
           <div className="max-w-3xl">
             <h1 className="mt-6 text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
               The shop your{" "}
