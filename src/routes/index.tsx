@@ -41,12 +41,6 @@ const PROMISES = [
   },
 ];
 
-const COMMON = [
-  { q: "Car won't start?", a: "Battery, starter, or a deeper electrical issue — we'll find it the first time." },
-  { q: "A/C blowing warm?", a: "Recharges, leaks, compressor swaps. Cold air, same day on most jobs." },
-  { q: "Check engine light?", a: "Real diagnostics — not just a code read. We tell you what it actually means." },
-  { q: "Squealing brakes?", a: "Pads, rotors, calipers, lines. Quiet, confident stops every time." },
-];
 
 function NeighborhoodDark() {
   return (
@@ -227,46 +221,6 @@ function NeighborhoodDark() {
         </div>
       </section>
 
-      {/* Common questions / problems */}
-      <section className="relative overflow-hidden border-b border-white/10 py-24">
-        <div
-          className="pointer-events-none absolute right-0 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full opacity-20 blur-3xl"
-          style={{ background: ACCENT }}
-        />
-        <div className="relative mx-auto max-w-7xl px-6">
-          <p
-            className="text-xs font-bold uppercase tracking-[0.25em]"
-            style={{ color: ACCENT_GLOW }}
-          >
-            Sound familiar?
-          </p>
-          <h2 className="mt-3 max-w-2xl text-4xl font-black tracking-tight md:text-5xl">
-            We hear these every week — and we fix them.
-          </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {COMMON.map((c) => (
-              <div
-                key={c.q}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur transition hover:border-white/20"
-              >
-                <h3 className="text-xl font-bold" style={{ color: ACCENT_GLOW }}>
-                  {c.q}
-                </h3>
-                <p className="mt-2 text-white/70">{c.a}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10">
-            <a
-              href={SHOP.phoneHref}
-              className="inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
-              style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
-            >
-              Talk to a real mechanic — {SHOP.phone}
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Reviews */}
       <section id="reviews" className="border-b border-white/10 py-24">
