@@ -286,7 +286,7 @@ function NeighborhoodDark() {
 
       {/* Visit / CTA */}
       <section id="visit" className="py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-2">
+        <div className="mx-auto max-w-7xl px-6">
           <div>
             <p
               className="text-xs font-bold uppercase tracking-[0.25em]"
@@ -333,50 +333,6 @@ function NeighborhoodDark() {
                 Send a message
               </Link>
             </div>
-          </div>
-
-          <div
-            className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-950 to-neutral-900 p-10"
-          >
-            <div
-              className="absolute inset-x-0 top-0 h-px"
-              style={{ background: `linear-gradient(90deg, transparent, ${ACCENT_GLOW}, transparent)` }}
-            />
-            <div
-              className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-20 blur-3xl"
-              style={{ background: ACCENT }}
-            />
-            <p
-              className="relative text-xs font-bold uppercase tracking-[0.25em]"
-              style={{ color: ACCENT_GLOW }}
-            >
-              The deal
-            </p>
-            <h3 className="relative mt-3 text-3xl font-black leading-tight">
-              Honest mechanics, on your block.
-            </h3>
-            <ul className="relative mt-6 space-y-4 text-white/70">
-              {[
-                "Free estimates before any work begins",
-                "Warranty on most parts and labor",
-                "Diagnostics done right the first time",
-              ].map((line) => (
-                <li key={line} className="flex items-start gap-3">
-                  <span
-                    className="mt-2 inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
-                    style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
-                  />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={SHOP.phoneHref}
-              className="relative mt-8 inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
-              style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
-            >
-              Call {SHOP.phone}
-            </a>
           </div>
         </div>
       </section>
