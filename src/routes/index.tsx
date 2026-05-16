@@ -133,6 +133,15 @@ function NeighborhoodDark() {
             <p className="mt-6 text-sm text-white/60">
               Feel free to call or text for a quote.
             </p>
+            <div className="mt-6">
+              <a
+                href={SHOP.phoneHref}
+                className="inline-flex rounded-full px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+                style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+              >
+                Call {SHOP.phone}
+              </a>
+            </div>
             <div className="mt-9 flex items-center gap-3 text-sm text-white/60">
               <span style={{ color: ACCENT_GLOW }}>
                 <StarRow n={5} />
