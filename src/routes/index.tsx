@@ -215,7 +215,7 @@ function NeighborhoodDark() {
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
             {SHOP.services.map((s) => (
-              <article key={s} className="group bg-neutral-950 p-6 transition hover:bg-neutral-900">
+              <article key={s} className="group bg-neutral-950 p-6 transition hover:bg-neutral-900 py-[16px]">
                 <div
                   className="h-1 w-8 rounded-full transition-all group-hover:w-16"
                   style={{ background: ACCENT, boxShadow: `0 0 12px ${ACCENT_GLOW}` }}
