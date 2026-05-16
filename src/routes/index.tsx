@@ -155,7 +155,7 @@ function NeighborhoodDark() {
       </section>
 
       {/* Promise strip */}
-      <section id="promise" className="border-b border-white/10 py-24">
+      <section id="promise" className="border-b border-white/10 py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
@@ -194,7 +194,7 @@ function NeighborhoodDark() {
       </section>
 
       {/* Services */}
-      <section id="services" className="border-b border-white/10 py-24">
+      <section id="services" className="border-b border-white/10 py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
@@ -232,7 +232,7 @@ function NeighborhoodDark() {
 
 
       {/* Reviews */}
-      <section id="reviews" className="border-b border-white/10 py-24">
+      <section id="reviews" className="border-b border-white/10 py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
             <div>
@@ -294,7 +294,7 @@ function NeighborhoodDark() {
       </section>
 
       {/* Visit / CTA */}
-      <section id="visit" className="py-24">
+      <section id="visit" className="py-14 md:py-20">
         <div className="mx-auto max-w-7xl px-6">
           <div>
             <p
