@@ -40,7 +40,7 @@ function ContactPage() {
       <header className="sticky top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-baseline gap-2">
-            <span className="text-2xl font-black tracking-tight">
+            <span className="font-black tracking-tight text-3xl">
               <span style={{ color: ACCENT }}>Roberts</span> Garage
             </span>
             <span className="hidden text-xs font-medium text-white/40 sm:inline">
