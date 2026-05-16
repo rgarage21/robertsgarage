@@ -77,18 +77,26 @@ function NeighborhoodDark() {
           </Link>
           <nav className="hidden items-center gap-7 text-sm font-medium text-white/70 md:flex">
             <a href="#services" className="hover:text-white">Services</a>
-            <a href="#promise" className="hover:text-white">Our promise</a>
             <a href="#reviews" className="hover:text-white">Reviews</a>
             <a href="#visit" className="hover:text-white">Visit</a>
             <Link to="/contact" className="hover:text-white">Contact</Link>
           </nav>
-          <a
-            href={SHOP.phoneHref}
-            className="rounded-full px-4 py-2 text-sm font-bold text-white transition hover:opacity-90"
-            style={{ background: ACCENT, boxShadow: `0 0 24px -6px ${ACCENT_GLOW}` }}
-          >
-            Call {SHOP.phone}
-          </a>
+          <div className="flex items-center gap-3">
+            <Link
+              to="/contact"
+              className="text-sm font-bold text-white/80 hover:text-white md:hidden"
+            >
+              Contact
+            </Link>
+            <a
+              href={SHOP.phoneHref}
+              className="whitespace-nowrap rounded-full px-4 py-2 text-sm font-bold text-white transition hover:opacity-90"
+              style={{ background: ACCENT, boxShadow: `0 0 24px -6px ${ACCENT_GLOW}` }}
+            >
+              <span className="md:hidden">☎ Call</span>
+              <span className="hidden md:inline">Call {SHOP.phone}</span>
+            </a>
+          </div>
         </div>
       </header>
 
