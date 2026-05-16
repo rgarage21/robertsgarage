@@ -176,7 +176,7 @@ function NeighborhoodDark() {
                 Our promise
               </p>
               <h2 className="mt-3 max-w-xl text-4xl font-black tracking-tight md:text-5xl">
-                The shop your neighbor told you about.
+                Treated like family. Priced like a friend.
               </h2>
             </div>
             <p className="max-w-md text-white/60">
