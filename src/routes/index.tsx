@@ -193,7 +193,7 @@ function NeighborhoodDark() {
                 className="text-xs font-bold uppercase tracking-[0.25em]"
                 style={{ color: ACCENT_GLOW }}
               >
-                What we do
+                Services
               </p>
               <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
                 What we fix at Roberts Garage
