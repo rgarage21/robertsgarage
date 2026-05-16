@@ -87,7 +87,7 @@ function NeighborhoodDark() {
               to="/contact"
               className="rounded-full border border-white/25 px-3 py-1.5 text-xs font-bold text-white transition hover:border-white/60 md:hidden"
             >
-              Contact
+              Contact Us
             </Link>
           </div>
         </div>
