@@ -196,7 +196,7 @@ function NeighborhoodDark() {
                 What we do
               </p>
               <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
-                Everyday repair. Done right.
+                What we fix at Roberts Garage
               </h2>
             </div>
             <p className="max-w-md text-white/60">
