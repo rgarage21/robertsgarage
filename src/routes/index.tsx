@@ -81,10 +81,10 @@ function NeighborhoodDark() {
             <a href="#visit" className="hover:text-white">Visit</a>
             <Link to="/contact" className="hover:text-white">Contact</Link>
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="text-sm font-bold text-white/80 hover:text-white md:hidden"
+              className="rounded-full border border-white/25 px-3 py-2 text-sm font-bold text-white transition hover:border-white/60 md:hidden"
             >
               Contact
             </Link>
