@@ -177,7 +177,7 @@ function NeighborhoodDark() {
             {PROMISES.map((p, i) => (
               <article
                 key={p.t}
-                className="bg-neutral-950 p-7 transition hover:bg-neutral-900"
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20 py-[16px]"
               >
                 <div
                   className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-black text-white"
