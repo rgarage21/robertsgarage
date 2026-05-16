@@ -138,7 +138,7 @@ function NeighborhoodDark() {
                 <StarRow n={5} />
               </span>
               <span>
-                <strong className="text-white">5.0</strong> on Google · trusted by drivers across Brazoria County
+                <strong className="text-white">5.0</strong> on Google · trusted by drivers across Fort Bend and Brazoria County
               </span>
             </div>
           </div>
