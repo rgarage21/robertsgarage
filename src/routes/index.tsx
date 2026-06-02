@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import heroDark from "@/assets/hero-neighborhood-dark.jpg";
 import { SERVICE_BLURBS, SHOP, StarRow } from "@/components/shop-shared";
+import { getGoogleReviews } from "@/lib/reviews.functions";
 
 const ACCENT = "oklch(0.62 0.24 27)"; // race red, slightly brighter for dark bg
 const ACCENT_GLOW = "oklch(0.7 0.22 25)";
@@ -43,6 +46,17 @@ const PROMISES = [
 
 
 function NeighborhoodDark() {
+  const fetchReviews = useServerFn(getGoogleReviews);
+  const { data } = useQuery({
+    queryKey: ["google-reviews"],
+    queryFn: () => fetchReviews(),
+    staleTime: 1000 * 60 * 60, // 1 hour
+  });
+  const reviews =
+    data?.source === "google" && data.reviews.length
+      ? data.reviews
+      : SHOP.reviews;
+
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Top utility bar */}
@@ -257,7 +271,7 @@ function NeighborhoodDark() {
             </a>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {SHOP.reviews.map((r) => (
+            {reviews.map((r) => (
               <article
                 key={r.name}
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20"
