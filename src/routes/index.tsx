@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
 import heroDark from "@/assets/hero-neighborhood-dark.jpg";
 import { SERVICE_BLURBS, SHOP, StarRow } from "@/components/shop-shared";
+import { getGoogleReviews } from "@/lib/reviews.functions";
 
 const ACCENT = "oklch(0.62 0.24 27)"; // race red, slightly brighter for dark bg
 const ACCENT_GLOW = "oklch(0.7 0.22 25)";
