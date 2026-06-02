@@ -271,7 +271,7 @@ function NeighborhoodDark() {
             </a>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {SHOP.reviews.map((r) => (
+            {reviews.map((r) => (
               <article
                 key={r.name}
                 className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:border-white/20"
