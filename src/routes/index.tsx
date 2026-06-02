@@ -56,6 +56,8 @@ function NeighborhoodDark() {
     data?.source === "google" && data.reviews.length
       ? data.reviews
       : SHOP.reviews;
+
+  return (
     <main className="min-h-screen bg-black text-white">
       {/* Top utility bar */}
       <div
