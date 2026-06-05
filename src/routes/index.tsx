@@ -43,19 +43,11 @@ const PROMISES = [
 
 
 function NeighborhoodDark() {
-  const fetchReviews = useServerFn(getGoogleReviews);
-  const { data } = useQuery({
-    queryKey: ["google-reviews"],
-    queryFn: () => fetchReviews(),
-    staleTime: 1000 * 60 * 60, // 1 hour
-  });
-  const reviews =
-    data?.source === "google" && data.reviews.length
-      ? data.reviews
-      : SHOP.reviews;
+  const reviews = SHOP.reviews;
 
   return (
     <main className="min-h-screen bg-black text-white">
+
       {/* Top utility bar */}
       <div
         className="border-b border-white/10 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70"
