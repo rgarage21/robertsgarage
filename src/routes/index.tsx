@@ -1,9 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-import { useServerFn } from "@tanstack/react-start";
 import heroDark from "@/assets/hero-neighborhood-dark.jpg";
 import { SERVICE_BLURBS, SHOP, StarRow } from "@/components/shop-shared";
-import { getGoogleReviews } from "@/lib/reviews.functions";
 
 const ACCENT = "oklch(0.62 0.24 27)"; // race red, slightly brighter for dark bg
 const ACCENT_GLOW = "oklch(0.7 0.22 25)";
@@ -46,19 +43,11 @@ const PROMISES = [
 
 
 function NeighborhoodDark() {
-  const fetchReviews = useServerFn(getGoogleReviews);
-  const { data } = useQuery({
-    queryKey: ["google-reviews"],
-    queryFn: () => fetchReviews(),
-    staleTime: 1000 * 60 * 60, // 1 hour
-  });
-  const reviews =
-    data?.source === "google" && data.reviews.length
-      ? data.reviews
-      : SHOP.reviews;
+  const reviews = SHOP.reviews;
 
   return (
     <main className="min-h-screen bg-black text-white">
+
       {/* Top utility bar */}
       <div
         className="border-b border-white/10 text-center text-[11px] font-semibold uppercase tracking-[0.25em] text-white/70"
