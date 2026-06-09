@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
 import { SHOP } from "@/lib/shop";
 
 const ACCENT = "oklch(0.62 0.24 27)";
 const ACCENT_GLOW = "oklch(0.7 0.22 25)";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjgdrdrd";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -23,6 +26,52 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast.success("Message sent! We'll get back to you soon.");
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        const data = await response.json().catch(() => null);
+        toast.error(
+          data?.error || "Something went wrong. Please try again later."
+        );
+      }
+    } catch {
+      toast.error("Network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Top utility bar */}
@@ -142,38 +191,83 @@ function ContactPage() {
 
           <form
             className="relative h-fit overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-neutral-950 to-neutral-900 p-7"
-            onSubmit={(e) => {
-              e.preventDefault();
-              const f = new FormData(e.currentTarget);
-              const body = encodeURIComponent(
-                `Name: ${f.get("name")}\nPhone: ${f.get("phone")}\nEmail: ${f.get("email")}\nVehicle: ${f.get("vehicle")}\n\n${f.get("message")}`,
-              );
-              window.location.href = `${SHOP.emailHref}?subject=Service%20request&body=${body}`;
-            }}
+            onSubmit={handleSubmit}
           >
             <div
               className="absolute inset-x-0 top-0 h-px"
               style={{ background: `linear-gradient(90deg, transparent, ${ACCENT_GLOW}, transparent)` }}
             />
-            <h2 className="text-xl font-black tracking-tight">Send a message</h2>
-            <p className="mt-1 text-sm text-white/60">
-              Tell us what's going on and we'll get back the same day.
-            </p>
+            {submitted ? (
+              <div className="py-8 text-center">
+                <div
+                  className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold"
+                  style={{ background: ACCENT, color: "white" }}
+                >
+                  ✓
+                </div>
+                <h2 className="text-xl font-black tracking-tight">Message sent!</h2>
+                <p className="mt-2 text-sm text-white/60">
+                  Thanks for reaching out. We'll get back to you as soon as possible.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 text-sm font-bold underline-offset-4 hover:underline"
+                  style={{ color: ACCENT_GLOW }}
+                >
+                  Send another message →
+                </button>
+              </div>
+            ) : (
+              <>
+                <h2 className="text-xl font-black tracking-tight">Send a message</h2>
+                <p className="mt-1 text-sm text-white/60">
+                  Tell us what's going on and we'll get back the same day.
+                </p>
 
-            <div className="mt-6 grid gap-4">
-              <Field name="name" label="Your name" />
-              <Field name="phone" label="Phone" type="tel" />
-              <Field name="email" label="Email" type="email" />
-              <Field name="vehicle" label="Vehicle (year, make, model)" />
-              <Field name="message" label="What's going on?" textarea />
-              <button
-                type="submit"
-                className="mt-2 rounded-full px-5 py-3 text-sm font-bold text-white transition hover:opacity-90"
-                style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
-              >
-                Send request
-              </button>
-            </div>
+                <div className="mt-6 grid gap-4">
+                  <Field
+                    name="name"
+                    label="Your name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Field
+                    name="email"
+                    label="Email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Field
+                    name="phone"
+                    label="Phone number"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                  <Field
+                    name="message"
+                    label="What's going on?"
+                    textarea
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="mt-2 rounded-full px-5 py-3 text-sm font-bold text-white transition hover:opacity-90 disabled:opacity-50"
+                    style={{ background: ACCENT, boxShadow: `0 0 32px -8px ${ACCENT_GLOW}` }}
+                  >
+                    {isSubmitting ? "Sending…" : "Send request"}
+                  </button>
+                </div>
+              </>
+            )}
           </form>
         </div>
       </section>
@@ -204,11 +298,17 @@ function Field({
   label,
   type = "text",
   textarea,
+  value,
+  onChange,
+  required,
 }: {
   name: string;
   label: string;
   type?: string;
   textarea?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  required?: boolean;
 }) {
   const cls =
     "w-full rounded-md border border-white/15 bg-white/5 px-3 py-2 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-white/40 focus:bg-white/10";
@@ -218,9 +318,23 @@ function Field({
         {label}
       </span>
       {textarea ? (
-        <textarea name={name} required rows={5} className={cls} />
+        <textarea
+          name={name}
+          required={required}
+          rows={5}
+          className={cls}
+          value={value}
+          onChange={onChange}
+        />
       ) : (
-        <input name={name} type={type} required className={cls} />
+        <input
+          name={name}
+          type={type}
+          required={required}
+          className={cls}
+          value={value}
+          onChange={onChange}
+        />
       )}
     </label>
   );
