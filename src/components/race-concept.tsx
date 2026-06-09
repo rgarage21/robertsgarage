@@ -345,7 +345,8 @@ export function RaceConcept({
             </article>
           ))}
         </div>
-        <div
+        {/* Hidden until Google API key is fixed */}
+        {/* <div
           className="mt-10 flex flex-col items-center gap-3 border border-dashed border-white/20 p-8 text-center"
           style={{ background: t.panel }}
         >
@@ -364,7 +365,7 @@ export function RaceConcept({
           >
             Leave a review →
           </a>
-        </div>
+        </div> */}
       </section>
 
       {/* CTA */}

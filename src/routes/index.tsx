@@ -278,7 +278,8 @@ function NeighborhoodDark() {
               </article>
             ))}
           </div>
-          <div className="mt-12 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-8 text-center">
+          {/* Hidden until Google API key is fixed */}
+          {/* <div className="mt-12 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-white/15 bg-white/[0.02] p-8 text-center">
             <p className="text-lg font-bold">Had a good experience with us?</p>
             <p className="max-w-md text-sm text-white/60">
               A quick review on Google helps your neighbors find an honest shop.
@@ -292,7 +293,7 @@ function NeighborhoodDark() {
             >
               Leave a review on Google
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 

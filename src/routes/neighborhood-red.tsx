@@ -301,7 +301,8 @@ function NeighborhoodRed() {
               </article>
             ))}
           </div>
-          <div className="mt-12 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 p-8 text-center">
+          {/* Hidden until Google API key is fixed */}
+          {/* <div className="mt-12 flex flex-col items-center gap-3 rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 p-8 text-center">
             <p className="text-lg font-bold">Had a good experience with us?</p>
             <p className="max-w-md text-sm text-neutral-600">
               A quick review on Google helps your neighbors find an honest shop.
@@ -315,7 +316,7 @@ function NeighborhoodRed() {
             >
               Leave a review on Google
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 
