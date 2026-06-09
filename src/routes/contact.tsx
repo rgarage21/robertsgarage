@@ -30,6 +30,7 @@ function ContactPage() {
     name: "",
     email: "",
     phone: "",
+    vehicle: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -58,7 +59,7 @@ function ContactPage() {
       if (response.ok) {
         toast.success("Message sent! We'll get back to you soon.");
         setSubmitted(true);
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", vehicle: "", message: "" });
       } else {
         const data = await response.json().catch(() => null);
         toast.error(
@@ -248,6 +249,12 @@ function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                  />
+                  <Field
+                    name="vehicle"
+                    label="Vehicle make & model"
+                    value={formData.vehicle}
+                    onChange={handleChange}
                   />
                   <Field
                     name="message"
