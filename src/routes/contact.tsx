@@ -37,7 +37,7 @@ function ContactPage() {
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-white/10 bg-black/80 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link to="/" className="flex items-baseline gap-2">
             <span className="font-black tracking-tight text-3xl">
@@ -63,7 +63,7 @@ function ContactPage() {
 
       <section className="relative overflow-hidden">
         <div
-          className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full opacity-20 blur-3xl"
+          className="pointer-events-none absolute -left-32 top-1/3 h-96 w-96 rounded-full opacity-10"
           style={{ background: ACCENT }}
         />
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-2 md:py-24">
