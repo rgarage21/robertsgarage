@@ -30,6 +30,7 @@ function ContactPage() {
     name: "",
     email: "",
     phone: "",
+    vehicle: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
