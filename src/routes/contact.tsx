@@ -251,6 +251,12 @@ function ContactPage() {
                     required
                   />
                   <Field
+                    name="vehicle"
+                    label="Vehicle make & model"
+                    value={formData.vehicle}
+                    onChange={handleChange}
+                  />
+                  <Field
                     name="message"
                     label="What's going on?"
                     textarea
