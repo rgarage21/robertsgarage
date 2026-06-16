@@ -219,7 +219,7 @@ function NeighborhoodDark() {
               </h2>
             </div>
             <p className="max-w-md text-white/60">
-              Same-day on most jobs. If we can't fix it today, you'll know before you leave the counter.
+              If we can't fix it today, we will let you know right away.
             </p>
           </div>
 
