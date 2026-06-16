@@ -223,7 +223,7 @@ function NeighborhoodDark() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2 lg:grid-cols-3">
             {SHOP.services.map((s) => (
               <article key={s} className="group bg-neutral-950 p-6 transition hover:bg-neutral-900 py-[16px]">
                 <div
@@ -236,6 +236,99 @@ function NeighborhoodDark() {
                 </p>
               </article>
             ))}
+            {/* Mobile repairs teaser card — links to dedicated section */}
+            <a
+              href="#mobile"
+              className="group bg-neutral-950 p-6 py-[16px] transition hover:bg-neutral-900"
+            >
+              <div className="flex items-center gap-2">
+                <div
+                  className="h-1 w-8 rounded-full transition-all group-hover:w-16"
+                  style={{ background: ACCENT, boxShadow: `0 0 12px ${ACCENT_GLOW}` }}
+                />
+                <span
+                  className="text-[10px] font-bold uppercase tracking-[0.2em]"
+                  style={{ color: ACCENT_GLOW }}
+                >
+                  New
+                </span>
+              </div>
+              <h3 className="mt-4 text-lg font-bold">Mobile Repairs — we come to you</h3>
+              <p className="mt-2 text-sm text-white/60">
+                Roadside, driveway, and parking-lot fixes. Tap to see what we handle on-site.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Repairs */}
+      <section id="mobile" className="relative border-b border-white/10 py-14 md:py-20">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 20% 20%, white 1px, transparent 1px), radial-gradient(circle at 80% 60%, white 1px, transparent 1px)",
+            backgroundSize: "40px 40px, 60px 60px",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <p
+                className="text-xs font-bold uppercase tracking-[0.25em]"
+                style={{ color: ACCENT_GLOW }}
+              >
+                Mobile & Roadside
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">
+                Stuck? We come to you.
+              </h2>
+            </div>
+            <p className="max-w-md text-white/60">
+              Dead battery, flat tire, no-start in the driveway — we'll roll out with the tools and parts
+              to get you moving without a tow.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { t: "Jump starts & batteries", d: "Test, swap, and replace on-site." },
+              { t: "Flat tire changes", d: "Spare swaps and plug repairs roadside." },
+              { t: "No-start diagnostics", d: "Starter, alternator, fuel, electrical — we trace it." },
+              { t: "Lockouts & quick fixes", d: "Small jobs we can finish in your driveway." },
+            ].map((item) => (
+              <div
+                key={item.t}
+                className="rounded-xl border border-white/10 bg-neutral-950 p-5 transition hover:border-white/30"
+              >
+                <div
+                  className="h-1 w-8 rounded-full"
+                  style={{ background: ACCENT, boxShadow: `0 0 12px ${ACCENT_GLOW}` }}
+                />
+                <h3 className="mt-4 text-base font-bold">{item.t}</h3>
+                <p className="mt-1.5 text-sm text-white/60">{item.d}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-col items-start gap-4 rounded-2xl border border-white/10 bg-neutral-950 p-6 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-white/50">
+                Service area
+              </p>
+              <p className="mt-1 text-lg font-semibold">
+                Rosharon and nearby — call to confirm your address.
+              </p>
+            </div>
+            <a
+              href={`tel:${SHOP.phone}`}
+              className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-bold text-black transition hover:scale-[1.02]"
+              style={{ background: ACCENT, boxShadow: `0 0 24px ${ACCENT_GLOW}` }}
+            >
+              Call for mobile service · {SHOP.phone}
+            </a>
           </div>
         </div>
       </section>
