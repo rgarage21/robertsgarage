@@ -131,11 +131,18 @@ function NeighborhoodDark() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-white/70">
-              Diagnostics, brakes, A/C, and more — done right, with honest pricing and no surprises.
+              Diagnostics, brakes, A/C, mobile repairs, and more — done right, with honest pricing and no surprises.
             </p>
             <p className="mt-6 text-sm text-white/60">
               Feel free to call or text for a quote.
             </p>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.05] px-3 py-1.5 text-xs font-medium text-white/70">
+              <span
+                className="inline-block h-2 w-2 rounded-full"
+                style={{ background: ACCENT, boxShadow: `0 0 8px ${ACCENT_GLOW}` }}
+              />
+              Mobile & roadside service — we come to you
+            </div>
             <div className="mt-6">
               <a
                 href={SHOP.phoneHref}
